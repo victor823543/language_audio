@@ -23,7 +23,7 @@ const DropdownSearch = ({options}) => {
 
 
     return (
-        <div className='relative w-[600px]'>
+        <div className='relative w-[200px] xs:w-[300px] sm:w-[350px] md:w-[400px] lg:w-[600px]'>
             <input
                 placeholder='Search...'
                 onChange={e => handleSearch(e)}
@@ -40,10 +40,10 @@ const DropdownSearch = ({options}) => {
                             key={option.id}
                             onClick={() => navigate(`/player/${option.id}`)}
                         >
-                            <div className='text-lg'>
+                            <div className='text-base xs:text-lg'>
                                 {option.name}
                             </div>
-                            <div className='text-md font-light'>
+                            <div className='text-sm xs:text-base font-light'>
                                 {option.author}
                             </div>
                         </div>

@@ -12,7 +12,7 @@ const buttonVariants = cva(
             },
             size: {
                 default: 'text-lg py-2 px-4',
-                lg: 'text-2xl py-4 px-6',
+                lg: 'text-base md:text-lg lg:text-2xl py-4 px-6',
                 sm: 'text-sm py-1 px-3',
             },
         },

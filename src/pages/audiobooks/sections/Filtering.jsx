@@ -30,16 +30,16 @@ const Filtering = ({bookObjectList}) => {
     }
 
     return (
-        <div className="flex flex-col gap-5 px-20 items-center z-10">
+        <div className="flex flex-col gap-5 px-2 xs:px-8 sm:px-12 md:px-16 lg:px-20 items-center z-10">
             <Header>
                 Filter by genre
             </Header>
-            <div className="flex flex-wrap justify-center gap-3 w-2/3">
+            <div className="flex flex-wrap justify-center gap-2 xs:gap-3 w-2/3">
                 {genres.map((genre, index) =>
                     <div 
                         key={genre}
                         onClick={() => handleGenreClick(genre)}
-                        className={`py-4 px-2 rounded-3xl ${selectedGenres.includes(genre) ? 'bg-secondary-300 hover:bg-secondary-400' : 'bg-basic-300 hover:bg-main-300'} border-2 border-main-600 text-black font-montserrat`}
+                        className={`p-2 xs:py-4 xs:px-2 text-sm sm:text-base rounded-3xl ${selectedGenres.includes(genre) ? 'bg-secondary-300 hover:bg-secondary-400' : 'bg-basic-300 hover:bg-main-300'} border-2 border-main-600 text-black font-montserrat`}
                     >
                         {genre}
                     </div>

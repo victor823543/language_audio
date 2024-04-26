@@ -13,16 +13,17 @@ const DisplayTitles = () => {
 
   return (
     <div className="bg-black flex flex-col items-center">
-        <Divider className='mb-20'/>
+        <Divider className='max-sm:mb-8 max-md:mb-12 mb-20'/>
         <div className="w-full flex justify-center py-6 px-10">
             <GeneratedText 
                 text='Explore an abundance of listens for all tastes'
-                className=''
+                className='text-center max-sm:text-xl max-md:text-3xl'
             />
         </div>
 
         <Section 
             color='gradient'
+            className='w-full overflow-hidden'
         >
             <ItemSlider 
                 items={Object.values(AllTitles)}
@@ -40,7 +41,7 @@ const DisplayTitles = () => {
                 BROWSE ALL TITLES
             </Button>
         </div>
-        <Divider className='my-20'/>
+        <Divider className='max-sm:my-8 max-md:my-12 my-20'/>
     </div>
     
   )
