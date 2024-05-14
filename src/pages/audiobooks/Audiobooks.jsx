@@ -10,7 +10,7 @@ const Audiobooks = () => {
 
     const bookObjectList = Object.values(AllTitles)
     return (
-      <div className="flex flex-col gap-5 py-10 px-8 items-center">
+      <div className="flex flex-col gap-5 py-10 px-2 xs:px-6 sm:px-8 items-center">
         <AuroraBackground 
           activate
           className='fixed inset-0 bg-black'

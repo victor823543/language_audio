@@ -25,7 +25,7 @@ const NavBarButton = ({active, setActive, className, inverted, invertedHover}) =
           initial={false}
           animate={active ? "open" : "closed"}
           onClick={() => setActive((pv) => !pv)}
-          className={cn('relative h-20 w-20 rounded-xl bg-white/0 transition-colors hover:bg-white/20', className)}
+          className={cn('relative h-20 w-20 rounded-xl bg-white/0 transition-colors hover:bg-white/20 max-xs:scale-75', className)}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >

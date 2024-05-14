@@ -14,12 +14,12 @@ const ExplanationImages = ({id, color}) => {
     if (id == 1) {
 
         return (
-            <AISvg color={color}/>
+            <AISvg className={'w-20 sm:w-28 md:w-44 lg:w-52'} color={color}/>
         )
     }
     if (id == 2) {
         return (
-            <div className=" w-52 flex flex-col items-center">
+            <div className=" w-20 sm:w-28 md:w-44 lg:w-52 flex flex-col items-center">
                 <TextSvg color={color}/>
                 <ScissorSvg color={color}/> 
             </div>
@@ -27,20 +27,20 @@ const ExplanationImages = ({id, color}) => {
     }
     if (id == 3) {
         return (
-            <div className="w-52 flex flex-col gap-6 items-center">
+            <div className="w-20 sm:w-28 md:w-44 lg:w-52 flex flex-col md:gap-6 items-center">
                 <TranslationSvg color={color}/>
-                <AlgorithmSvg color={color}/>
+                <AlgorithmSvg className='w-full' color={color}/>
             </div>
         )
     }
     if (id == 4) {
         return (
-            <AudiobookSvg color={color}/>
+            <AudiobookSvg className='w-20 sm:w-28 md:w-44 lg:w-52' color={color}/>
         )
     }
     if (id == 5) {
         return (
-            <AudiobookSvg color={color}/>
+            <AudiobookSvg className='w-20 sm:w-28 md:w-44 lg:w-52' color={color}/>
         )
     }
 }

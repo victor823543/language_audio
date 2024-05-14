@@ -27,21 +27,21 @@ const UserExperience = () => {
             <GeneratedText 
                 text='Optimized for learning'
                 colorTheme={'secondary'}
-                className='mb-10'
+                className='mb-10 max-sm:text-2xl'
             />
         </div>
-      <div className="flex w-full font-nunitoSans">
-        <div className="px-10 flex-grow w-0">
+      <div className="flex max-lg:flex-col gap-y-5 w-full font-nunitoSans">
+        <div className="p-4 xs:px-6 md:px-10 ">
           <Section
             variant='neonBorder'
             color='transparent'
             className='text-basic-200'
           >
-            <h2 className="text-3xl font-nunitoSans text-secondary-400 font-light mb-2">Follow along the text</h2>
-            <p className="text-lg text-main-200 font-light">The text is shown in two parallell columns with the current sentence highlighted. Thus you can combine reading and listening to <span className="text-main-500 font-montserrat text-xl text-shadow shadow-main-700 border-b border-secondary-800">maximize your learning.</span>  And don't worry, the text will automatically scroll down for you. And of course you can customize the font after your preference.</p>
+            <h2 className="text-2xl md:text-3xl font-nunitoSans text-secondary-400 font-light mb-2">Follow along the text</h2>
+            <p className="text-sm xs:text-base sm:text-lg text-main-200 font-light">The text is shown in two parallell columns with the current sentence highlighted. Thus you can combine reading and listening to <span className="text-main-500 font-montserrat text-base xs:text-lg sm:text-xl text-shadow shadow-main-700 border-b border-secondary-800">maximize your learning.</span>  And don't worry, the text will automatically scroll down for you. And of course you can customize the font after your preference.</p>
           </Section>
         </div>
-        <div className="px-10 flex-grow w-0">
+        <div className="p-4 xs:px-6 md:px-10 ">
           <Section
             variant='neonBorder'
             color='transparent'
@@ -52,7 +52,7 @@ const UserExperience = () => {
               {loremIpsumSentences.map((text, index) => 
                 <div key={index} className={`${count === index ? 'relative' : 'block'}`}>
                   <div
-                    className="p-3 z-10 text-white"
+                    className="p-1 xs:p-3 z-10 text-white text-xs xs:text-base"
                   >{text}</div>
                   {count === index &&
                   <motion.span
@@ -66,8 +66,8 @@ const UserExperience = () => {
           </Section>
         </div>
       </div>
-      <div className="flex w-full font-nunitoSans mt-16">
-      <div className="px-10 flex-grow w-0">
+      <div className="flex max-md:flex-col gap-y-5 w-full font-nunitoSans mt-16">
+      <div className="p-4 xs:px-6 md:px-10">
           <Section
             variant='neonBorder'
             color='transparent'
@@ -91,14 +91,14 @@ const UserExperience = () => {
             </div>
           </Section>
         </div>
-        <div className="px-10 flex-grow w-0">
+        <div className="p-4 xs:px-6 md:px-10">
           <Section
             variant='neonBorder'
             color='transparent'
             className='text-basic-200'
           >
-            <h2 className="text-3xl font-nunitoSans text-secondary-400 font-light mb-2">Customizable playback rate</h2>
-            <p className="text-lg text-main-200 font-light">We allow you to change the playback rate of <span className="text-main-500 font-montserrat text-xl text-shadow shadow-main-700 border-b border-secondary-800">either language.</span> If you have trouble following along the audio of the language you are learning you can hence slow it down to make sure that you get as much out of every listen. </p>
+            <h2 className="text-2xl md:text-3xl font-nunitoSans text-secondary-400 font-light mb-2">Customizable playback rate</h2>
+            <p className="text-sm xs:text-base sm:text-lg text-main-200 font-light">We allow you to change the playback rate of <span className="text-main-500 font-montserrat text-base xs:text-lg sm:text-xl text-shadow shadow-main-700 border-b border-secondary-800">either language.</span> If you have trouble following along the audio of the language you are learning you can hence slow it down to make sure that you get as much out of every listen. </p>
           </Section>
         </div>
         

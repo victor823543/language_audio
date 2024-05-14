@@ -12,8 +12,8 @@ const headerVariants = cva(
                 bold: 'text-basic-200 font-bold',
             },
             size: {
-                default: 'text-4xl',
-                lg: 'text-7xl',
+                default: 'text-xl xs:text-2xl md:text-3xl lg:text-4xl',
+                lg: 'text-2xl md:text-3xl: lg:text-5xl xl:text-7xl',
                 sm: 'text-xl',
             },
             textShadow: {

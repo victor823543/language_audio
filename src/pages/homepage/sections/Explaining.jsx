@@ -52,7 +52,7 @@ const Explaining = () => {
                 style={{background}}
                 className={`sticky top-0 flex flex-col pb-12 gap-4 items-center bg-black h-screen overflow-y-hidden`}
             >
-                <div className="pt-6 backdrop-blur-md z-10">
+                <div className="pt-6 backdrop-blur-md z-10 bg-black">
                     <Header
                         size='lg'
                         textShadow='md'

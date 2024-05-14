@@ -14,7 +14,7 @@ const NavBar = ({className, inverted, invertedHover}) => {
 
   return (
     <>
-        <div className="fixed top-3 right-3 z-50">
+        <div className="fixed top-1 right-1 xs:top-3 xs:right-3 z-50">
             <NavBarButton active={open} setActive={setOpen} className={className} inverted={inverted} invertedHover={invertedHover}/>
         </div>
         {open &&

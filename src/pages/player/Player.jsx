@@ -9,15 +9,7 @@ import PlayerSection from "./sections/PlayerSection"
 import TextSection from "./sections/TextSection"
 import HalfSection from "../../components/HalfSection"
 import { findSpanIndexAndLanguage } from "../../utils/functions"
-import PanelObject from "../../components/panel/PanelObject"
-import ModalContentLanguage from "./panelModals/ModalContentLanguage"
-import ModalContentText from "./panelModals/ModalContentText"
-import ModalContentVolume from "./panelModals/ModalContentVolume"
-import { RiFontSize2 } from "@remixicon/react"
-import { RiVolumeUpFill } from "@remixicon/react"
-import { RiTranslate2 } from "@remixicon/react"
-import { RiSpeedUpFill } from "@remixicon/react"
-import ModalContentPlaybackRate from "./panelModals/ModalContentPlaybackRate"
+import SettingsPanel from "./sections/SettingsPanel"
 
 
 
@@ -38,6 +30,7 @@ const Player = () => {
   const [languageBRate, setLanguageBRate] = useState(1)
   const [playbackRateMode, setPlaybackRateMode] = useState(0)
   const [volume, setVolume] = useState(1)
+  const [showText, setShowText] = useState(false)
 
 
   useEffect(() => {
@@ -128,7 +121,10 @@ const Player = () => {
   
 
   return (
-    <div className="fixed w-full h-full flex px-6">
+    <div className="fixed w-full h-full flex flex-col px-6">
+
+      {/* For large devices */}
+      <div className="max-lg:hidden w-full h-full flex">
       <HalfSection>
         <TextSection 
           text_a={textData.text_a}
@@ -139,39 +135,19 @@ const Player = () => {
           fontSize={fontSize}
         />
       </HalfSection>
-      <div className="h-full px-1 flex flex-col gap-2 justify-center">
-        <PanelObject 
-          Icon={RiFontSize2}
-          ModalContent={
-            <ModalContentText 
-              handleSubtract={() => setFontSize(prev => prev - 1)}
-              handleAdd={() =>setFontSize(prev => prev + 1)}
-            />}
-        />
-        <PanelObject 
-          Icon={RiTranslate2}
-          ModalContent={<ModalContentLanguage info={audiobookInfo}/>}
-        />
-        <PanelObject 
-          Icon={RiVolumeUpFill}
-          ModalContent={<ModalContentVolume volume={volume} setVolume={setVolume}/>}
-        />
-        <PanelObject 
-          Icon={RiSpeedUpFill}
-          ModalContent={<ModalContentPlaybackRate 
-            rate={playbackRate} 
-            setRate={handleSetPlaybackRate}
-            languageARate={languageARate}
-            languageBRate={languageBRate}
-            setLanguageARate={setLanguageARate}
-            setLanguageBRate={setLanguageBRate}
-          />}
 
-        />
+      <div className="max-lg:hidden h-full px-1 flex flex-col gap-2 justify-center">
+        <SettingsPanel setFontSize={setFontSize} playbackRate={playbackRate} handleSetPlaybackRate={handleSetPlaybackRate} languageARate={languageARate} languageBRate={languageBRate} setLanguageARate={setLanguageARate} setLanguageBRate={setLanguageBRate} audiobookInfo={audiobookInfo} volume={volume} setVolume={setVolume}/>
+      </div>
+
+      <div className="flex flex-col justify-center">
+
+        <div className="hidden w-full px-1 gap-2 justify-center items-end">
+          <SettingsPanel setFontSize={setFontSize} playbackRate={playbackRate} handleSetPlaybackRate={handleSetPlaybackRate} languageARate={languageARate} languageBRate={languageBRate} setLanguageARate={setLanguageARate} setLanguageBRate={setLanguageBRate} audiobookInfo={audiobookInfo} volume={volume} setVolume={setVolume}/>
+        </div>
+      <HalfSection className={'max-h-[700px]'}>
 
         
-      </div>
-      <HalfSection>
         <PlayerSection 
           playing={playing}
           cover={audiobookInfo.cover}
@@ -181,7 +157,39 @@ const Player = () => {
           progress={progress}
           name={audiobookInfo.name}
         />
+
+        
       </HalfSection>
+      </div>
+      </div>
+
+    {/* For small devices */}
+      <div className="lg:hidden h-full w-full my-4 mx-1">
+        <PlayerSection 
+            playing={playing}
+            cover={audiobookInfo.cover}
+            playPause={handlePlayPause}
+            rewind={handleRewind}
+            forward={handleForward}
+            progress={progress}
+            name={audiobookInfo.name}
+            showText={showText}
+            setShowText={setShowText}
+            panel={
+              {setFontSize: setFontSize, playbackRate: playbackRate, handleSetPlaybackRate: handleSetPlaybackRate, languageARate: languageARate, languageBRate: languageBRate, setLanguageARate: setLanguageARate, setLanguageBRate: setLanguageBRate, audiobookInfo: audiobookInfo, volume: volume, setVolume: setVolume }
+            }
+        >
+          <TextSection 
+            text_a={textData.text_a}
+            text_b={textData.text_b}
+            current_id={currentSentenceId}
+            current_language={currentLanguageId}
+            seek={goToSentence}
+            fontSize={fontSize}
+          />
+        </PlayerSection>
+      </div>
+
       
       
       <NavBar className='bg-basic-700/40' invertedHover={true}/>
