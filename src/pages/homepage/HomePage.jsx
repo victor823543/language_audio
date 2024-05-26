@@ -6,7 +6,7 @@ import NavBar from "../../components/NavBar"
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="snap-y snap-mandatory">
       <NavBar />
       <TopSection />
       <DisplayTitles />

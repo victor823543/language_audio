@@ -66,7 +66,7 @@ const UserExperience = () => {
           </Section>
         </div>
       </div>
-      <div className="flex max-md:flex-col gap-y-5 w-full font-nunitoSans mt-16">
+      <div className="flex max-md:flex-col-reverse gap-y-5 w-full font-nunitoSans mt-16">
       <div className="p-4 xs:px-6 md:px-10">
           <Section
             variant='neonBorder'
